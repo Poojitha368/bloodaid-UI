@@ -1,6 +1,7 @@
 // const url = 'http://localhost/bloodaidphp-api' // this is for php api
 
-const url = 'http://localhost:5000' // this is for py api
+// const url = 'http://localhost:5000' // this is for py api
+const url = 'http://localhost:3000' // this is for nodejs api
 
 function shownavigation() {
   let loggedin = false;
@@ -405,7 +406,7 @@ function loadPatientForm() {
     console.log(Data);
 
     $.ajax({
-      url: `http://localhost:5000/patient_form/${userId}`,
+      url: `${url}/patient_form/${userId}`,
       type: "POST",
       dataType: "json",
       contentType: "application/json",
@@ -452,7 +453,7 @@ function loadViewRequests() {
 `);
 
   $.ajax({
-    url: `http://localhost:5000/view_requests/${userId}`,
+    url: `${url}/view_requests/${userId}`,
     type: "GET",
     dataType: "json",
     success: function (response) {
@@ -506,7 +507,7 @@ function loadViewDonations() {
 
   // Make AJAX request to fetch donations for the logged-in user
   $.ajax({
-    url: `http://localhost:5000/view_donations/${userId}`, // Using dynamic user_id
+    url: `${url}/view_donations/${userId}`, // Using dynamic user_id
     type: "GET",
     dataType: "json",
     success: function (response) {
@@ -543,7 +544,7 @@ function loadViewStock() {
 
   // to fetch bloodstock data
   $.ajax({
-    url: "http://localhost:5000/blood_stock", // Endpoint to fetch blood stock data
+    url: `${url}/blood_stock`, // Endpoint to fetch blood stock data
     method: "GET",
     success: function (data) {
       let container = $("#blood-stock-container");
@@ -592,7 +593,7 @@ function loadDonorHistory() {
 `);
 
   $.ajax({
-    url: "http://localhost:5000/donor_history",
+    url: `${url}/donor_history`,
     type: "GET",
     dataType: "json",
     success: function (response) {
@@ -635,7 +636,7 @@ function loadPatientHistory() {
 `);
 
   $.ajax({
-    url: "http://localhost:5000/patient_history",
+    url: `${url}/patient_history`,
     type: "GET",
     dataType: "json",
     success: function (response) {
@@ -681,7 +682,7 @@ function loadDonorRequests() {
   `);
 
   $.ajax({
-    url: "http://localhost:5000/donation_requests",
+    url: `${url}/donation_requests`,
     type: "GET",
     headers: { accept: "application/json" },
     success: function (response) {
@@ -719,7 +720,7 @@ function loadDonorRequests() {
         };
 
         $.ajax({
-          url: `http://localhost:5000//update_donation_request/${donationId}`,
+          url: `${url}/update_donation_request/${donationId}`,
           type: "PUT",
           contentType: "application/json",
           dataType: "json",
@@ -763,7 +764,7 @@ function loadPatientRequests() {
   `);
 
   $.ajax({
-    url: "http://localhost:5000/patient_requests",
+    url: `${url}/patient_requests`,
     type: "GET",
     headers: { accept: "application/json" },
     success: function (response) {
@@ -801,7 +802,7 @@ function loadPatientRequests() {
         };
 
         $.ajax({
-          url: `http://localhost:5000/update_patient_request/${requestId}`,
+          url: `${url}/update_patient_request/${requestId}`,
           type: "PUT",
           contentType: "application/json",
           dataType: "json",
