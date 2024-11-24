@@ -1,7 +1,9 @@
 // const url = 'http://localhost/bloodaidphp-api' // this is for php api
-
 // const url = 'http://localhost:5000' // this is for py api
-const url = 'http://localhost:3000' // this is for nodejs api
+// const url = 'http://localhost:3000' // this is for nodejs api
+
+// Render links
+const url = 'https://bloodaid-nodejs-api-9u0d.onrender.com' // for nodejs
 
 function shownavigation() {
   let loggedin = false;
